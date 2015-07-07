@@ -1,15 +1,17 @@
 describe('Thermostat', function() {
 
+  beforeEach(function() {
+    thermostat = new Thermostat();
+  });
+
   describe('temperature defaults', function() {
     it('to 20ºC', function() {
-      thermostat = new Thermostat();
       expect(thermostat.temperature).toEqual(20);
     });
   });
 
   describe('increases', function() {
     it('the temperature by 1º', function() {
-      thermostat = new Thermostat();
       thermostat.increase();
       expect(thermostat.temperature).toEqual(21);
     });
@@ -17,7 +19,6 @@ describe('Thermostat', function() {
 
   describe('decreases', function() {
     it('the temperature by 1ºC', function() {
-      thermostat = new Thermostat();
       thermostat.decrease();
       expect(thermostat.temperature).toEqual(19);
     });
@@ -25,7 +26,6 @@ describe('Thermostat', function() {
 
   describe('cannot decrease if', function() {
     it('temperature is <= 10ºC', function() {
-      thermostat = new Thermostat();
       thermostat.temperature = 10;
       expect(thermostat.decrease()).toEqual('reached minimum temperature');
     });
@@ -33,18 +33,15 @@ describe('Thermostat', function() {
 
   describe('power saving mode,', function() {
     it('defaults to on', function() {
-      thermostat = new Thermostat();
       expect(thermostat.powerSave).toEqual(true);
     });
 
     it('can be turned off', function() {
-      thermostat = new Thermostat();
       thermostat.powerSaveOff();
       expect(thermostat.powerSave).toEqual(false);
     });
 
     it('can be turned on', function() {
-      thermostat = new Thermostat();
       thermostat.powerSaveOn();
       expect(thermostat.powerSave).toEqual(true);
     });
@@ -52,13 +49,11 @@ describe('Thermostat', function() {
 
   describe('when power save is', function() {
     it('on, the max temperature is 25ºC', function() {
-      thermostat = new Thermostat();
       thermostat.temperature = 25;
       expect(thermostat.increase()).toEqual('reached maximum temperature');
     });
 
     it('off, the max temperature is 32ºC', function() {
-      thermostat = new Thermostat();
       thermostat.powerSaveOff();
       thermostat.temperature = 32;
       expect(thermostat.increase()).toEqual('reached maximum temperature');
@@ -67,10 +62,22 @@ describe('Thermostat', function() {
 
   describe('reset the temperature', function() {
     it('changes the temperature to 20', function() {
-      thermostat = new Thermostat();
       thermostat.increase();
       thermostat.resetTemperature();
       expect(thermostat.temperature).toEqual(20);
+    });
+  });
+
+  describe('toggle switches Power Save', function() {
+    it('off if on', function() {
+      thermostat.powerSaveToggle();
+      expect(thermostat.powerSave).toEqual(false)
+    });
+
+    it('on if off', function() {
+      thermostat.powerSave = false
+      thermostat.powerSaveToggle();
+      expect(thermostat.powerSave).toEqual(true)
     });
   });
 });
