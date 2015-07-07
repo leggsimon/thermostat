@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <script type="text/javascript" src="src/Thermostat.js">
+
+    </script>
+
+    <h2 id="temperature"></h2>
+
+    <script>
+    thermostat = new Thermostat();
+    document.getElementById('temperature').innerHTML = thermostat.temperature;
+    </script>
+
+    <button id="up" onclick="thermostat.increase(); document.getElementById('temperature').innerHTML = thermostat.temperature">UP</button>
+    <button id="down" onclick="thermostat.decrease(); document.getElementById('temperature').innerHTML = thermostat.temperature">DOWN</button>
+    <
+  </head>
+</html>
