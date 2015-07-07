@@ -58,6 +58,12 @@ describe('Thermostat', function() {
       thermostat.temperature = 32;
       expect(thermostat.increase()).toEqual('reached maximum temperature');
     });
+
+    it('off and temperature >25ºC, temperature sets to 25ºC when PS turned back on', function() {
+      thermostat.temperature = 31;
+      thermostat.powerSaveOn();
+      expect(thermostat.temperature).toEqual(25)
+    });
   });
 
   describe('reset the temperature', function() {
