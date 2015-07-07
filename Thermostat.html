@@ -15,6 +15,6 @@
 
     <button id="up" onclick="thermostat.increase(); document.getElementById('temperature').innerHTML = thermostat.temperature">UP</button>
     <button id="down" onclick="thermostat.decrease(); document.getElementById('temperature').innerHTML = thermostat.temperature">DOWN</button>
-    <
+    <input type="checkbox" name="powersaver" onchange="thermostat.togglePowerSave(); document.getElementById('temperature').innerHTML = thermostat.temperature" checked="true">Power Saving Mode</input>
   </head>
 </html>
