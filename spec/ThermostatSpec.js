@@ -70,13 +70,13 @@ describe('Thermostat', function() {
 
   describe('toggle switches Power Save', function() {
     it('off if on', function() {
-      thermostat.powerSaveToggle();
+      thermostat.togglePowerSave();
       expect(thermostat.powerSave).toEqual(false)
     });
 
     it('on if off', function() {
       thermostat.powerSave = false
-      thermostat.powerSaveToggle();
+      thermostat.togglePowerSave();
       expect(thermostat.powerSave).toEqual(true)
     });
   });
