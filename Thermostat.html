@@ -2,9 +2,8 @@
 <html>
   <head>
 
-    <script type="text/javascript" src="src/Thermostat.js">
-
-    </script>
+    <script type="text/javascript" src="src/Thermostat.js"></script>
+    <script type="text/javascript" src="src/app.js"></script>
 
     <h2 id="temperature"></h2>
 
@@ -13,8 +12,8 @@
     document.getElementById('temperature').innerHTML = thermostat.temperature;
     </script>
 
-    <button id="up" onclick="thermostat.increase(); document.getElementById('temperature').innerHTML = thermostat.temperature">UP</button>
-    <button id="down" onclick="thermostat.decrease(); document.getElementById('temperature').innerHTML = thermostat.temperature">DOWN</button>
-    <input type="checkbox" name="powersaver" onchange="thermostat.togglePowerSave(); document.getElementById('temperature').innerHTML = thermostat.temperature" checked="true">Power Saving Mode</input>
+    <button id="up" onclick="increaseTemperature()">UP</button>
+    <button id="down" onclick="decreaseTemperature()">DOWN</button>
+    <input type="checkbox" id="powersaver" onchange="togglePowerSaverMode()" checked="true">Power Saving Mode</input>
   </head>
 </html>
