@@ -1,10 +1,10 @@
 var thermostat = new Thermostat();
 
 var temperatureRefresh = function() {
-  document.getElementById('temperature').innerHTML = thermostat.temperature;
-  if (thermostat.temperature >= 25) { document.getElementById('temperature').style.color = "red"; }
-  if (thermostat.temperature < 25) { document.getElementById('temperature').style.color = "orange"; }
-  if (thermostat.temperature < 18) { document.getElementById('temperature').style.color = "green"; }
+  $('#temperature').html(thermostat.temperature);
+  if (thermostat.temperature >= 25) { $('#temperature').css("color", "red"); }
+  if (thermostat.temperature < 25)  { $('#temperature').css("color", "orange"); }
+  if (thermostat.temperature < 18)  { $('#temperature').css("color", "green"); }
 }
 
 var increaseTemperature = function() {
@@ -27,7 +27,9 @@ var resetThermostat = function() {
   temperatureRefresh();
 }
 
-document.getElementById('upButton').onclick    = increaseTemperature;
-document.getElementById('downButton').onclick  = decreaseTemperature;
-document.getElementById('powersaver').onchange = togglePowerSaverMode;
-document.getElementById('resetButton').onclick = resetThermostat;
+temperatureRefresh();
+
+$('#upButton').click(increaseTemperature);
+$('#downButton').click(decreaseTemperature);
+$('#powersaver').change(togglePowerSaverMode);
+$('#resetButton').click(resetThermostat);
