@@ -3,16 +3,25 @@
 
   <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
   </head>
 
   <body>
 
-    <h2 id="temperature"></h2>
+    <p id="display"><p id="temperature"></p>&#x2103;</p>
 
-    <button id="upButton">UP</button>
-    <button id="downButton">DOWN</button>
-    <input type="checkbox" id="powersaver" checked="true">Power Saving Mode</input>
-    <button id="resetButton">RESET</button>
+    <button id="upButton" class="button">UP</button>
+    <button id="downButton" class="button">DOWN</button>
+    <button id="resetButton" class="button">RESET</button>
+    <label><input type="checkbox" id="powersaver" class="onoffswitch" checked="true">Power Saving Mode</input></label>
+    <select id="cityList">
+      <option value="london">London</option>
+      <option value="paris">Paris</option>
+    </select>
+
+    <div id="cityWeather"></div>
+
   </body>
 
   <script type="text/javascript" src="src/Thermostat.js"></script>

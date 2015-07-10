@@ -1,0 +1,53 @@
+#display, #temperature {
+  display:inline-block;
+}
+
+#temperature {
+  font-size: 40pt;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  text-align: center;
+}
+
+#display {
+
+}
+
+
+
+.button {
+  margin: 1em auto;
+  width: 18em;
+  text-align: center;
+  background-color: #eee;
+  padding: 0.3em 0;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.6);
+  border-radius: 8px;
+}
+  /*a:hover {
+    color: #eee;
+    background-color: #333;
+  }
+}
+
+#downButton {
+  &::after {
+    content: '\25bc';
+    padding-left: 0.5em;
+  }
+}
+
+#upButton {
+  &::after {
+    content: '\25b2';
+    padding-left: 0.5em;
+  }
+}*/
